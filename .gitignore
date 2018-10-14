@@ -267,5 +267,4 @@ tags
 # Persistent undo
 [._]*.un~
 
-.gitignore
 .idea/
