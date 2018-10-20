@@ -7,45 +7,62 @@
     <link rel="stylesheet" href="index.css">
     <title>Monster's CV</title>
     <!--https://rscard.px-lab.com/startuper/-->
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
 
-<div class="top-nav-bar clearfix">
-    <a class="logo">
-        <span class="monster">Mons</span><span class="card">Card</span>
-    </a>
-    <nav>
-        <ul class="clearfix">
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">SKILLS</a></li>
-            <li><a href="#">EXPERIENCES</a></li>
-            <li><a href="#">PRICING</a></li>
-            <li><a href="#">BLOG</a></li>
-            <li><a href="#">CALENDAR</a></li>
-            <li><a href="#">OTHER</a></li>
-            <li><a href="#">ALL DEMOS</a></li>
-        </ul>
-    </nav>
+<div class="top-nav-bar">
+    <div class="top-nav-bar-inner clearfix">
+        <a class="logo">
+            <span class="monster">Mons</span><span class="card">Card</span>
+        </a>
+        <nav>
+            <ul class="clearfix">
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#">EXPERIENCES</a></li>
+                <li><a href="#">PRICING</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CALENDAR</a></li>
+                <li><a href="#">OTHER</a></li>
+                <li><a href="#">ALL DEMOS</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 
-<div class="banner"></div>
+<div class="banner">
+    <div class="mask"></div>
+</div>
 
 <main>
-    <div class="card">
-        <div class="intro">
+    <div class="user-card">
+        <div class="intro clearfix">
             <div class="avatar">
-                <img src="" alt="Avatar">
+                <img src="./img/avatar.jpg" width="299" height="347" alt="Avatar">
             </div>
             <div class="profile">
-                <span class="welcome">Hello</span>
+                <span class="welcome">Hello
+                    <span class="triangle"></span>
+                </span>
                 <h1>I'm Haixiang Yan</h1>
-                <p>Frontend Developer</p>
+                <h2>Frontend Developer</h2>
                 <hr>
                 <dl>
+                    <dt>Seeking</dt>
+                    <dd>SDE Summer Internship 2019</dd>
                     <dt>AGE</dt>
                     <dd>22</dd>
-                    <dt>City</dt>
-                    <dd>Irvine</dd>
+                    <dt>Address</dt>
+                    <dd>3900 Parkview Lane, Irvine, CA</dd>
                     <dt>Email</dt>
                     <dd>haixiang6123@gmail.com</dd>
                     <dt>Tel</dt>
@@ -54,13 +71,26 @@
             </div>
         </div>
         <footer class="media">
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
+            <a href="https://github.com/Haixiang6123">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/yan-haixiang-0b9744150/">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/yan.haixiang">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-Facebook"></use>
+                </svg>
+            </a>
+            <a href="https://www.zhihu.com/people/yan-hai-87-22/activities">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-twitter"></use>
+                </svg>
+            </a>
         </footer>
     </div>
 
@@ -100,5 +130,7 @@
         <div class="small"></div>
     </div>
 </section>
+
+<script src="//at.alicdn.com/t/font_882425_uwqr9qpwff.js"></script>
 </body>
 </html>

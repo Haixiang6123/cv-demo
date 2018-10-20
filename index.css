@@ -1,12 +1,22 @@
 body {
     margin: 0;
-    background: black;
-    color: white;
+    background: #efefef;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
 }
 
 .clearfix::after {
@@ -15,19 +25,19 @@ a {
     clear: both;
 }
 
-.top-nav-bar > nav > ul {
+.top-nav-bar nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.top-nav-bar > nav > ul > li {
+.top-nav-bar nav > ul > li {
     float: left;
     margin-left: 17px;
     margin-right: 17px;
 }
 
-.top-nav-bar > nav > ul > li > a {
+.top-nav-bar nav > ul > li > a {
     display: block;
     font-size: 12px;
     color: #B7B7B7;
@@ -38,19 +48,28 @@ a {
     padding: 5px 0;
 }
 
-.top-nav-bar > nav > ul > li > a:hover {
+.top-nav-bar nav > ul > li > a:hover {
     border-bottom: 3px solid #e06567;
 }
 
 .top-nav-bar {
-    padding: 20px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.top-nav-bar-inner {
+    padding: 0 80px;
 }
 
 .top-nav-bar > a {
     float: left;
 }
 
-.top-nav-bar > nav {
+.top-nav-bar nav {
     float: right
 }
 
@@ -66,4 +85,107 @@ a {
 
 .top-nav-bar .logo .card {
     color: #9A9DA2;
+}
+
+.banner {
+    height: 515px;
+    background: url(./img/bg.jpg) center center;
+    background-size: cover;
+}
+
+.banner .mask {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.user-card {
+    max-width: 940px;
+    margin: 0 auto;
+    background: white;
+    color: #3d4451;
+}
+
+.user-card .intro {
+    padding: 70px 50px;
+}
+
+.user-card .welcome {
+    display: inline-block;
+    position: relative;
+    padding: 4px 16px;
+    margin-bottom: 10px;
+    background: #E6686A;
+    color: white;
+    line-height: 22px;
+}
+
+.user-card .welcome .triangle {
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    display: block;
+    border: 8px solid transparent;
+    width: 0;
+    border-left-color: #E6686A;
+    border-top-width: 0;
+}
+
+.user-card .avatar {
+    float: left;
+}
+
+.user-card .profile {
+    float: left;
+    margin-left: 65px;
+    width: 400px;
+}
+
+.user-card .profile h1 {
+    margin-top: 18px;
+}
+
+.user-card .profile hr {
+    margin: 20px 0;
+}
+
+.user-card dl dt,
+.user-card dl dd {
+    float: left;
+    padding: 7px 0;
+}
+
+.user-card dl dt {
+    width: 30%;
+    font-weight: bold;
+}
+
+.user-card dl dd {
+    width: 70%;
+    color: #9da0a7;
+}
+
+.user-card footer.media {
+    background: #E6686A;
+    text-align: center;
+}
+
+.user-card footer.media a {
+    display: inline-block;
+    padding: 10px 0;
+    margin: 16px 16px;
+    width: 40px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.user-card footer.media a:hover {
+    background: #CF5D5F;
+}
+
+.user-card footer.media svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    vertical-align: top;
 }
