@@ -8,6 +8,14 @@ a {
     text-decoration: none;
 }
 
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -103,10 +111,11 @@ hr {
     margin: 0 auto;
     background: white;
     color: #3d4451;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 .user-card .intro {
-    padding: 70px 50px;
+    padding: 60px 50px;
 }
 
 .user-card .welcome {
@@ -177,6 +186,7 @@ hr {
     line-height: 20px;
     text-align: center;
     border-radius: 50%;
+    transition: background-color .5s;
 }
 
 .user-card footer.media a:hover {
@@ -188,4 +198,164 @@ hr {
     height: 20px;
     fill: white;
     vertical-align: top;
+}
+
+main {
+    margin-top: -320px;
+}
+
+main .download-button-wrapper {
+    text-align: center;
+}
+
+main .download-button-wrapper .download-button {
+    margin-top: 32px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    border: 1px solid #CDCFD1;
+    border-radius: 4px;
+    font-weight: bold;
+    background: #EFEFEF;
+    color: #3d4451;
+    transition: box-shadow .3s;
+}
+
+main .download-button-wrapper .download-button:hover {
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+
+main .self-intro {
+    max-width: 940px;
+    margin: 32px auto 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 200;
+}
+
+section.skills,
+section.portfolio {
+    max-width: 940px;
+    margin: 70px auto 0;
+    box-sizing: border-box;
+}
+
+section.skills > h2,
+section.portfolio > h2{
+    margin-bottom: 25px;
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+section.skills h3 {
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+
+section.skills > ol {
+    padding: 40px 50px 0;
+    background: white;
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+section.skills > ol > li {
+    padding: 0 15px 5px;
+    float: left;
+    width: 50%;
+    color: #3d4451;
+    box-sizing: border-box;
+}
+
+section.skills .progress-bar {
+    margin: 4px 0 40px;
+    height: 5px;
+    background: #FBE1E2;
+    border-radius: 2px;
+}
+section.skills .progress-bar .progress {
+    height: 100%;
+    width: 50%;
+    background: #E6686A;
+    border-radius: 2px;
+}
+
+section.portfolio {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+section.portfolio > nav {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+section.portfolio > nav > ol {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 auto;
+}
+section.portfolio > nav > ol > li {
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+section.portfolio > nav > ol > li:nth-child(1) {
+    margin-left: 0;
+}
+
+section.portfolio > nav .bar {
+    width: 100%;
+    height: 5px;
+    background: white;
+    border-radius: 4px;
+}
+
+section.portfolio > nav .bar .bar-inner {
+    margin-top: 5px;
+    height: 100%;
+    width: 10%;
+    background: #E6686A;
+    border-radius: 4px;
+    transition: all .5s;
+}
+section.portfolio > nav .bar.state-1 .bar-inner {
+    margin-left: 0;
+    width: 31px;
+}
+section.portfolio > nav .bar.state-2 .bar-inner {
+    margin-left: 70px;
+    width: 82px;
+}
+section.portfolio > nav .bar.state-3 .bar-inner {
+    margin-left: 190px;
+    width: 79px;
+}
+
+section.portfolio .projects {
+    margin-top: 30px;
+    position: relative;
+}
+
+section.portfolio .projects .big,
+section.portfolio .projects .small {
+    position: absolute;
+}
+section.portfolio .projects .small {
+    top: 0;
+    left: 620px;
+}
+section.portfolio .projects .small img {
+    max-width: 290px;
+}
+section.portfolio .projects .big {
+    top: 0;
+    left: 0;
+    max-width: 606px;
 }

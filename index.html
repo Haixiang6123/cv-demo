@@ -94,40 +94,94 @@
         </footer>
     </div>
 
-    <a class="button" href="#">DOWNLOAD RESUME</a>
-    <p>
-        Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. <br>
-        Experienced with all stages of the development cycle for dynamic web projects. <br>
-        Well-versed in numerous programming languages including JavaScript, SQL, and C. <br>
-        Rich background in project management and customer relations.
+    <p class="download-button-wrapper">
+        <a class="download-button" href="docs/Resume.pdf" target="_blank">DOWNLOAD RESUME</a>
+    </p>
+    <p class="self-intro">
+        Hello! I’m Haixiang Yan. Senior Web Developer specializing in front end development.
+        Experienced with all stages of the development cycle for dynamic web projects.
+        Well-versed in numerous programming languages including JavaScript, Java, and Python.
+        Rich background in mobile development and database management∫.
     </p>
 </main>
 
-<section>
-    <h2>SKILLS</h2>
-    <ol>
-        <li>HTML 5 &amp; CSS 3</li>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>Vue.js &amp; React.js</li>
-        <li>HTTP</li>
+<section class="skills">
+    <h2>Professional Skills</h2>
+    <ol class="clearfix">
+        <li>
+            <h3>HTML 5 &amp; CSS 3</h3>
+            <div class="progress-bar">
+                <div style="width: 95%;" class="progress"></div>
+            </div>
+        </li>
+        <li>
+            <h3>JavaScript</h3>
+            <div class="progress-bar">
+                <div style="width: 90%;" class="progress"></div>
+            </div>
+        </li>
+        <li>
+            <h3>jQuery</h3>
+            <div class="progress-bar">
+                <div style="width: 90%;" class="progress"></div>
+            </div>
+        </li>
+        <li>
+            <h3>Vue.js &amp; React.js</h3>
+            <div class="progress-bar">
+                <div style="width: 92%;" class="progress"></div>
+            </div>
+        </li>
+        <li>
+            <h3>Express.js &amp; Koa.js</h3>
+            <div class="progress-bar">
+                <div style="width: 74%" class="progress"></div>
+            </div>
+        </li>
+        <li>
+            <h3>Python</h3>
+            <div class="progress-bar">
+                <div style="width: 70%;" class="progress"></div>
+            </div>
+        </li>
     </ol>
 </section>
 
-<section>
+<section class="portfolio">
     <h2>Projects</h2>
     <nav>
-        <ol>
-            <li>ALL</li>
-            <li>Framework</li>
-            <li>JavaScript</li>
+        <ol class="clearfix">
+            <li id="portfolioAll">ALL</li>
+            <li id="portfolioFramework">Framework</li>
+            <li id="portfolioJs">JavaScript</li>
         </ol>
+        <div id="portfolioBar" class="bar state-1">
+            <div class="bar-inner"></div>
+        </div>
     </nav>
 
-    <div class="projects">
-        <div class="big"></div>
-        <div class="small"></div>
-        <div class="small"></div>
+    <script>
+        portfolioAll.onclick = function() {
+            portfolioBar.className = 'bar state-1'
+        }
+        portfolioFramework.onclick = function() {
+            portfolioBar.className = 'bar state-2'
+        }
+        portfolioJs.onclick = function() {
+            portfolioBar.className = 'bar state-3'
+        }
+    </script>
+
+    <div class="projects" style="height: 597px;">
+        <div class="big" style="top: 0;">
+            <img src="./img/job-1.jpg" alt="job 1">
+        </div>
+        <div class="small" style="top: 0;">
+            <img src="./img/job-2.jpg" alt="job 2">
+        </div>
+        <div class="small" style="top: 310px;">
+            <img src="./img/job-3.jpg" alt="job 3">
+        </div>
     </div>
 </section>
 
