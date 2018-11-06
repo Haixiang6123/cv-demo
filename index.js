@@ -1,27 +1,53 @@
-setTimeout(function() {
-    document.querySelector('#loading-wrapper').classList.remove('active')
-}, 0)
+simulateLoading()
 
-window.onscroll = function(event) {
-    if (window.scrollY > 0) {
-        document.querySelector('#topNavBar').classList.add('sticky')
-    }
-    else {
-        document.querySelector('#topNavBar').classList.remove('sticky')
+initScrollAnimation()
+
+addSubmenuListeners()
+
+initJumpAnimation()
+
+function simulateLoading() {
+    setTimeout(function () {
+        document.querySelector('#loading-wrapper').classList.remove('active')
+    }, 0)
+}
+
+function initScrollAnimation() {
+    window.onscroll = function (event) {
+        if (window.scrollY > 0) {
+            document.querySelector('#topNavBar').classList.add('sticky')
+        }
+        else {
+            document.querySelector('#topNavBar').classList.remove('sticky')
+        }
     }
 }
 
-let menuTriggers = document.querySelectorAll('.menu-trigger')
-for (let i = 0; i < menuTriggers.length; i++) {
-    menuTriggers[i].onmouseenter = function (event) {
-        let currentTarget = event.currentTarget
-        let brother = currentTarget.nextSibling
-        while (brother.nodeType === Node.TEXT_NODE) {
-            brother = brother.nextSibling
+function addSubmenuListeners() {
+    let menuLiEls = document.querySelectorAll('nav.menu > ul > li')
+    for (let i = 0; i < menuLiEls.length; i++) {
+        menuLiEls[i].onmouseenter = function (event) {
+            let currentTarget = event.currentTarget
+            currentTarget.classList.add('active')
         }
-        // 找到 brother
-        console.log(brother)
+        menuLiEls[i].onmouseleave = function (event) {
+            let currentTarget = event.currentTarget
+            currentTarget.classList.remove('active')
+        }
     }
-    menuTriggers[i].onmouseleave = function (event) {
-    }
+}
+
+function initJumpAnimation() {
+    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+    aTags.forEach((aTag) => {
+        aTag.onclick = function (event) {
+            event.preventDefault()
+            let href = event.currentTarget.getAttribute('href')
+            let element = document.querySelector(href)
+            let top = element.offsetTop
+            let top2 = element.getBoundingClientRect().top + window.scrollY
+            console.log(top, top2)
+            window.scrollTo(0, top - 80)
+        }
+    })
 }
