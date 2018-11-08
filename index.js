@@ -16,7 +16,7 @@ function simulateLoading() {
         document.querySelector('#loading-wrapper').classList.remove('active')
         setTimeout(() => {
             scrollHighlight(navItems, specialTags)
-        }, 500)
+        }, 150)
     }, 0)
 }
 
