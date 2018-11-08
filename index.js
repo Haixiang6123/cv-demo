@@ -6,6 +6,8 @@ addSubmenuListeners()
 
 initJumpAnimation()
 
+requestAnimationFrame(animate);
+
 function simulateLoading() {
     setTimeout(function () {
         document.querySelector('#loading-wrapper').classList.remove('active')
@@ -42,12 +44,35 @@ function initJumpAnimation() {
     aTags.forEach((aTag) => {
         aTag.onclick = function (event) {
             event.preventDefault()
-            let href = event.currentTarget.getAttribute('href')
-            let element = document.querySelector(href)
-            let top = element.offsetTop
-            let top2 = element.getBoundingClientRect().top + window.scrollY
-            console.log(top, top2)
-            window.scrollTo(0, top - 80)
+
+            let top = document.querySelector(event.currentTarget.getAttribute('href')).offsetTop
+            let offset = 150
+
+            let currentTop = window.scrollY
+            let targetTop = top - offset
+            let deltaDistance = Math.abs(targetTop - currentTop)
+            // Set time depend on distance
+            let time = deltaDistance / 100 * 800
+            // Maximum total time
+            if (time > 800) {
+                time = 800
+            }
+
+            let coords = { y: currentTop }; // Start at (0, 0)
+
+            let tween = new TWEEN.Tween(coords)
+                .to({ y: targetTop }, time) // 100px 500ms
+                .easing(TWEEN.Easing.Quadratic.InOut)
+                .onUpdate(function() {
+                    window.scrollTo(0, coords.y)
+                })
+                .start()
         }
     })
+}
+
+// Setup the animation loop.
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
 }
