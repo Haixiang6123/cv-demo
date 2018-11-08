@@ -1,3 +1,6 @@
+let specialTags = document.querySelectorAll('section[data-scroll]')
+let navItems = document.querySelectorAll('nav.menu > ul > li')
+
 simulateLoading()
 
 initScrollAnimation()
@@ -6,15 +9,44 @@ addSubmenuListeners()
 
 initJumpAnimation()
 
-requestAnimationFrame(animate);
+requestAnimationFrame(animate)
 
 function simulateLoading() {
     setTimeout(function () {
         document.querySelector('#loading-wrapper').classList.remove('active')
+        setTimeout(() => {
+            scrollHighlight(navItems, specialTags)
+        }, 500)
     }, 0)
 }
 
+function scrollHighlight(navItems, specialTags) {
+    // Find activated nav item and add activated class
+    let activeSection = specialTags[0]
+    specialTags.forEach((tag) => {
+        if (Math.abs(tag.offsetTop - window.scrollY) < Math.abs(activeSection.offsetTop - window.scrollY)) {
+            activeSection = tag
+        }
+    })
+
+    // Remove class to float up
+    activeSection.classList.remove('float-up')
+
+    let id = activeSection.id
+    let liEl = document.querySelector('a[href="#' + id + '"]').parentNode
+    // Remove active
+    navItems.forEach((navItem) => {
+        navItem.classList.remove('highlight')
+    })
+    liEl.classList.add('highlight')
+}
+
 function initScrollAnimation() {
+
+    specialTags.forEach((tag) => {
+        tag.classList.add('float-up')
+    })
+
     window.onscroll = function (event) {
         if (window.scrollY > 0) {
             document.querySelector('#topNavBar').classList.add('sticky')
@@ -22,6 +54,8 @@ function initScrollAnimation() {
         else {
             document.querySelector('#topNavBar').classList.remove('sticky')
         }
+
+        scrollHighlight(navItems, specialTags)
     }
 }
 
@@ -58,12 +92,12 @@ function initJumpAnimation() {
                 time = 800
             }
 
-            let coords = { y: currentTop }; // Start at (0, 0)
+            let coords = {y: currentTop} // Start at (0, 0)
 
             let tween = new TWEEN.Tween(coords)
-                .to({ y: targetTop }, time) // 100px 500ms
+                .to({y: targetTop}, time) // 100px 500ms
                 .easing(TWEEN.Easing.Quadratic.InOut)
-                .onUpdate(function() {
+                .onUpdate(function () {
                     window.scrollTo(0, coords.y)
                 })
                 .start()
@@ -73,6 +107,6 @@ function initJumpAnimation() {
 
 // Setup the animation loop.
 function animate(time) {
-    requestAnimationFrame(animate);
-    TWEEN.update(time);
+    requestAnimationFrame(animate)
+    TWEEN.update(time)
 }
