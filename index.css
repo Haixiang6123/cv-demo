@@ -102,4 +102,19 @@ section.portfolio .projects .big,
 section.portfolio .projects .small { position: absolute; }
 section.portfolio .projects .small { top: 0; left: 620px; }
 section.portfolio .projects .small img { max-width: 290px; }
-section.portfolio .projects .big { top: 0; left: 0; max-width: 606px; }
+section.portfolio .projects .big { top: 0; left: 0; max-width: 606px;}
+
+
+section.portfolio .swiper-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 500px;
+}
+section.portfolio .swiper-pagination-bullet {
+    background: white;
+}
+section.portfolio:hover .swiper-button-prev:hover,
+section.portfolio:hover .swiper-button-next:hover {
+    transform: scale(1.5);
+    transition: all .5s;
+}
