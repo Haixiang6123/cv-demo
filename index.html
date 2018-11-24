@@ -186,17 +186,32 @@
     </div>
 </section>
 
+<section class="message">
+    <h2>Message Board</h2>
+    <ol id="noteList"></ol>
+    <form id="noteForm" style="width: 700px;margin: 50px auto;">
+        <label for="">Name</label>
+        <input type="text" name="name">
+        <label for="">Message</label>
+        <input type="text" name="content">
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
 <footer class="footer">
     <p>Made By Haixiang Yan</p>
 </footer>
 
 <script src="//at.alicdn.com/t/font_882425_uwqr9qpwff.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-realtime@4.2.0/dist/realtime.browser.min.js"></script>
 <script src="js/tween.js"></script>
 <script src="js/auto-slide-up.js"></script>
 <script src="js/sticky.js"></script>
 <script src="js/submenu.js"></script>
 <script src="js/init-swiper.js"></script>
+<script src="js/init-db.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

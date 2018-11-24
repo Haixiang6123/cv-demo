@@ -4,7 +4,6 @@
         view: null,
         init: function (view) {
             this.view = view
-            this.bindEvents()
             for (let i = 0; i < view.length; i++) {
                 view[i].onmouseenter = function (event) {
                     let currentTarget = event.currentTarget
